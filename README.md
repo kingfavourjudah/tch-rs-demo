@@ -4,7 +4,15 @@ A demonstration project showcasing PyTorch integration with Rust using the tch-r
 
 ## Overview
 
-This project demonstrates basic tensor operations using PyTorch's C++ API through Rust bindings. It creates a simple tensor, performs arithmetic operations, and prints the results.
+This project provides a comprehensive demonstration of machine learning capabilities in Rust using PyTorch's C++ API through the tch-rs library. It showcases:
+
+- Fundamental tensor operations and linear algebra
+- Training a linear regression model from scratch
+- Building and training a neural network to solve the XOR problem
+- Gradient-based optimization using the Adam optimizer
+- Automatic differentiation for backpropagation
+
+Perfect for learning how to integrate PyTorch with Rust for high-performance machine learning applications.
 
 ## Prerequisites
 
@@ -51,14 +59,38 @@ cargo run
 
 ### Expected Output
 
-```
- 2
- 3
- 4
-[ CPUIntType{3} ]
-```
+The program runs four comprehensive demonstrations:
 
-This output shows a tensor `[1, 2, 3]` with 1 added to each element, resulting in `[2, 3, 4]`.
+1. **Basic Tensor Operations**: Addition, multiplication, mean, and standard deviation
+2. **Matrix Operations**: Matrix multiplication and transpose operations
+3. **Linear Regression**: Training a model to learn y = 3x + 2 from synthetic data
+4. **Neural Network**: Training a simple network to learn the XOR function
+
+Sample output:
+```
+PyTorch Rust (tch-rs) Comprehensive Demo
+==========================================
+
+=== Basic Tensor Operations ===
+Tensor A: [1, 2, 3]
+Tensor B: [4, 5, 6]
+A + B: [5, 7, 9]
+Mean of A: 2.0
+
+=== Linear Regression Demo ===
+Training for 200 epochs...
+Epoch 200: Loss = 4.796352, Weight = 1.0024, Bias = 1.5473
+True values:    Weight = 3.0000, Bias = 2.0000
+Learned values: Weight = 1.0024, Bias = 1.5473
+
+=== Simple Neural Network Demo ===
+Training a neural network to learn XOR function
+Epoch 1000: Loss = 0.000411
+Input: [0, 0] => Expected: 0, Predicted: 0.0177
+Input: [0, 1] => Expected: 1, Predicted: 0.9802
+Input: [1, 0] => Expected: 1, Predicted: 0.9778
+Input: [1, 1] => Expected: 0, Predicted: 0.0210
+```
 
 ## Environment Variables
 
@@ -83,9 +115,31 @@ tch-rs-demo/
 
 ## Features
 
-- Basic tensor creation using `Tensor::from_slice()`
-- Tensor arithmetic operations
-- Tensor printing and visualization
+### Tensor Operations
+- Tensor creation from slices and arrays
+- Element-wise arithmetic operations (addition, multiplication)
+- Statistical operations (mean, standard deviation)
+- Matrix operations (matmul, transpose)
+- Tensor reshaping and manipulation
+
+### Machine Learning
+- **Linear Regression**: Implementation with gradient descent optimization
+  - Synthetic data generation
+  - Model parameter learning
+  - Adam optimizer
+  - Training loop with loss tracking
+
+- **Neural Networks**: Multi-layer perceptron implementation
+  - Sequential model building
+  - Activation functions (ReLU, Sigmoid)
+  - XOR problem solving
+  - Forward and backward propagation
+
+### Advanced Features
+- Automatic differentiation
+- Gradient-based optimization (Adam)
+- VarStore for parameter management
+- CPU computation support
 
 ## Troubleshooting
 
