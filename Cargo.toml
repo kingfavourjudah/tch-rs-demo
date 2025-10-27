@@ -1,0 +1,7 @@
+[package]
+name = "tch-rs-demo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tch = "0.18.0" # Updated to latest version for better compatibility
